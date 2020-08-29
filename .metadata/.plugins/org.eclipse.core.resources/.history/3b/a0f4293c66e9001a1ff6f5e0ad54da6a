@@ -1,0 +1,37 @@
+/**
+ * This Page Object file records all the objects of Login Page of NewsTuck Application
+ */
+function login(){
+	
+	this.loginContainer=element(by.css("form[class*='login']"));
+	this.userNameInput=element(by.css("input[formcontrolname*='username']"));
+	this.passWordInput=element(by.css("input[formcontrolname*= 'password']"));	
+	this.loginButton=element(by.css("input[value= 'Login']"));
+	this.toggleEye=element(by.css(".fa.fa-eye"));
+	this.visiblePwdText=element(by.css("input[formcontrolname*= 'password'][type='text']"));
+	this.toggleEyeSlash=element(by.css(".fa.fa-eye-slash"));
+	this.inVisiblePwd=element(by.css("input[formcontrolname*= 'password'][type='password']"));
+	this.blankError=element(by.css("div.error"));
+	this.incorrectError=element(by.css("div.errorMessage"));
+	this.headerTitle=element(by.css("h2.login-header"));
+	
+	this.getURL=function()
+	{
+     browser.get("http://stage-newstuck.onemindindia.com/#/login");
+	};
+	
+	module.export=new login();
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+};

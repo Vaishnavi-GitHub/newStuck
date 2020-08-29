@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites disabled="0" errors="0" failures="0" tests="6" time="9.12">
+ <testsuite name="Login Page Suite" timestamp="2020-08-29T14:35:42" hostname="localhost" time="9.12" errors="0" tests="6" skipped="0" disabled="0" failures="0">
+  <testcase classname="Login Page Suite" name="TC_01 # A registered User should be able to successfully login to the application" time="3.255" />
+  <testcase classname="Login Page Suite" name="TC_02 # A Unregistered User should not be able to login to the application" time="1.995" />
+  <testcase classname="Login Page Suite" name="TC_03 # When Toggle Eye slash button is clicked Password should be visible to the user as text" time="1.384" />
+  <testcase classname="Login Page Suite" name="TC_04 # When Toggle Eye  button is clicked Password should not be visible to the user " time="0.987" />
+  <testcase classname="Login Page Suite" name="TC_05 # When Username Field is left Blank, error message should be displayed " time="0.737" />
+  <testcase classname="Login Page Suite" name="TC_06 # When Password Field is left Blank, error message should be displayed " time="0.758" />
+ </testsuite>
+</testsuites>

@@ -1,0 +1,11 @@
+/**
+ * This file contains the hardcoded data messages to be validated
+ */
+
+dataSet=[
+msg:"hi",
+jk:"ok"
+
+	
+	
+]

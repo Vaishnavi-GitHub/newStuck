@@ -1,0 +1,19 @@
+{
+  "name": "newstuck",
+  "version": "1.0.0",
+  "description": "This package helps in automates newsTuck application",
+  "main": "config.js",
+  "author": "Vaishnavi palanikumar",
+  "license": "ISC",
+  "dependencies": {
+  
+  
+  
+  
+  
+  },
+  
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+}

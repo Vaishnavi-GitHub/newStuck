@@ -1,0 +1,37 @@
+/**
+ * This the Spec File of Login Functionality
+ */
+describe("Login Page Suite", function(){
+	
+var loginObj=  require("./loginPage.js");
+	
+it("Check Username", function(){
+	
+	console.log(loginObj.headerTitle.getText());
+	
+	loginObj.getURL();
+	
+	
+});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+});

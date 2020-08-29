@@ -1,0 +1,98 @@
+/**
+ * This the Spec File of Login Functionality
+ */
+describe("Login Page Suite", function(){
+	
+var loginObj=  require("./loginPage.js");
+
+//TC-01
+	
+//it("TC_01 # A registered User should be able to successfully login to the application", function(){
+//	
+// loginObj.getURL();
+// loginObj.headerTitle.getText().then(function(text) {
+//	  expect(text.toLowerCase()).toEqual("newstuck");
+//	});
+// expect(loginObj.loginContainer.isDisplayed()).toBe(true);
+// loginObj.userNameInput.sendKeys("StageCurator");
+// loginObj.passWordInput.sendKeys("$tageN3w5tuckCu6ato6");
+// loginObj.loginButton.click();	
+//});
+//
+////TC-02
+//
+//it("TC_02 # A Unregistered User should not be able to login to the application", function(){
+//	
+//	 loginObj.getURL();
+//	 loginObj.headerTitle.getText().then(function(text) {
+//		  expect(text.toLowerCase()).toEqual("newstuck");
+//		});
+//	 expect(loginObj.loginContainer.isDisplayed()).toBe(true);
+//	 loginObj.userNameInput.sendKeys("newCurator");
+//	 loginObj.passWordInput.sendKeys("$stageCura$");
+//	 loginObj.loginButton.click();	
+//	 loginObj.incorrectError.isDisplayed().then(function(bool){
+//		 if(bool){
+//			 expect(loginObj.incorrectError.getText()).toBe("Username Or Password Is Incorrect");
+//		 }
+//		 else{
+//			 console.error("Error message is not shown when invalid login creadentials are given")
+//		}
+//      })	
+//});
+
+//TC-03
+
+it("TC_03 # When Toggle Eye slash button is clicked Password should be visible to the user as text", function(){
+	
+ loginObj.getURL();
+ loginObj.headerTitle.getText().then(function(text) {
+	  expect(text.toLowerCase()).toEqual("newstuck");
+	});
+ expect(loginObj.loginContainer.isDisplayed()).toBe(true);
+ loginObj.userNameInput.sendKeys("StageCurator");
+ loginObj.passWordInput.sendKeys("$tageN3w5tuckCu6ato6");
+ loginObj.toggleEyeSlash.click();
+ loginObj.passWordInput.getAttribute('type').then(function(value){
+	 expect(value).toBe("text");	 
+ })
+ loginObj.loginButton.click();	
+});
+	
+//TC-04
+
+it("TC_04 # When Toggle Eye  button is clicked Password should not be visible to the user ", function(){
+	
+ loginObj.getURL();
+ loginObj.headerTitle.getText().then(function(text) {
+	  expect(text.toLowerCase()).toEqual("newstuck");
+	});
+ expect(loginObj.loginContainer.isDisplayed()).toBe(true);
+ loginObj.userNameInput.sendKeys("StageCurator");
+ loginObj.passWordInput.sendKeys("$tageN3w5tuckCu6ato6");
+ loginObj.toggleEyeSlash.click();
+ loginObj.passWordInput.getAttribute('type').then(function(value){
+	 expect(value).toBe("text");	 
+ })
+ loginObj.loginButton.click();	
+});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+});

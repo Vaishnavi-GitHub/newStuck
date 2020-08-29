@@ -1,0 +1,109 @@
+/**
+ * This is the Spec File of Login Functionality
+ */
+describe("Login Page Suite", function(){
+	
+var loginObj=  require("./loginPage.js");
+var dataFile=  require("./data.js");
+
+
+beforeEach(function() {
+	 loginObj.getURL();
+	 loginObj.headerTitle.getText().then(function(text) {
+		  expect(text.toLowerCase()).toEqual(dataFile.titles.loginHeader);
+		});
+  });
+
+
+//TC-01
+	
+it("TC_01 # A registered User should be able to successfully login to the application", function(){
+ expect(loginObj.loginContainer.isDisplayed()).toBe(true);
+ loginObj.userNameInput.sendKeys(dataFile.dataDrive.Curator.UserName);
+ loginObj.passWordInput.sendKeys(dataFile.dataDrive.Curator.Password);
+ loginObj.loginButton.click();	
+});
+
+//TC-02
+
+it("TC_02 # A Unregistered User should not be able to login to the application", function(){
+	 expect(loginObj.loginContainer.isDisplayed()).toBe(true);
+	 loginObj.userNameInput.sendKeys(dataFile.dataDrive.unRegistered.UserName);
+	 loginObj.passWordInput.sendKeys(dataFile.dataDrive.unRegistered.Password);
+	 loginObj.loginButton.click();	
+	 loginObj.incorrectError.isDisplayed().then(function(bool){
+		 if(bool){
+			 expect(loginObj.incorrectError.getText()).toBe(dataFile.errorMessages.blankFieldsError);
+		 }
+		 else{
+			 console.error("Error message is not shown when invalid login creadentials are given")
+		}
+      })	
+});
+
+//TC-03
+
+it("TC_03 # When Toggle Eye slash button is clicked Password should be visible to the user as text", function(){
+ expect(loginObj.loginContainer.isDisplayed()).toBe(true);
+ loginObj.userNameInput.sendKeys(dataFile.dataDrive.Curator.UserName);
+ loginObj.passWordInput.sendKeys(dataFile.dataDrive.Curator.Password);
+ loginObj.toggleEyeSlash.click();
+ loginObj.passWordInput.getAttribute('type').then(function(value){
+	 expect(value).toBe("text");	 
+ })
+ loginObj.loginButton.click();	
+});
+	
+//TC-04
+
+it("TC_04 # When Toggle Eye  button is clicked Password should not be visible to the user ", function(){	
+ expect(loginObj.loginContainer.isDisplayed()).toBe(true);
+ loginObj.userNameInput.sendKeys(dataFile.dataDrive.Curator.UserName);
+ loginObj.passWordInput.sendKeys(dataFile.dataDrive.Curator.Password);
+ loginObj.toggleEyeSlash.click();
+ loginObj.toggleEye.click();
+ loginObj.passWordInput.getAttribute('type').then(function(value){
+	 expect(value).toBe("password");	 
+ })
+ loginObj.loginButton.click();	
+});
+
+//TC-05
+
+it("TC_05 # When Username Field is left Blank, error message should be displayed ", function(){
+ expect(loginObj.loginContainer.isDisplayed()).toBe(true);
+ loginObj.passWordInput.sendKeys(dataFile.dataDrive.Curator.Password);
+ loginObj.loginButton.click();	
+ loginObj.blankError.isDisplayed().then(function(bool){
+	 if(bool){
+	 expect(loginObj.blankError.getText()).toBe(dataFile.errorMessages.userIDErrorMessage);
+ }
+ else{
+	 console.error("Error message is not shown when Username creadential is left blank")
+}
+})	
+
+});
+
+//TC-06
+
+it("TC_06 # When Password Field is left Blank, error message should be displayed ", function(){
+	 expect(loginObj.loginContainer.isDisplayed()).toBe(true);
+	 loginObj.userNameInput.sendKeys(dataFile.dataDrive.Curator.UserName);
+	 loginObj.loginButton.click();	
+	 loginObj.blankError.isDisplayed().then(function(bool){
+		 if(bool){
+		 expect(loginObj.blankError.getText()).toBe(dataFile.errorMessages.pwdErrorMessage);
+	 }
+	 else{
+		 console.error("Error message is not shown when Username creadential is left blank")
+	}
+	})		
+	
+	});
+	
+afterEach(function() {
+	console.log("Test Completed")
+ });
+
+});

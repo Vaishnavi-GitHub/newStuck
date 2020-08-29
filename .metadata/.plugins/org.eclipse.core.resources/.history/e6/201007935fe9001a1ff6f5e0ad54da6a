@@ -1,0 +1,21 @@
+/**
+ * This Page Object file records all the objects of Login Page of NewsTuck Application
+ */
+function login(){
+	
+	this.loginContainer=element(by.css("form[class*='login']"));
+	this.userNameInput=element(by.css("input[formcontrolname*='username']"));
+	this.result=element(by.css("h2[class='ng-binding']"));	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
